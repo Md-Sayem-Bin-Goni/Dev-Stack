@@ -1,11 +1,34 @@
-import React from 'react';
+import React, { useState, type Dispatch, type SetStateAction } from 'react';
 import type { Itechnology } from '../Type/Type';
+import { Bounce, toast } from 'react-toastify';
 
 interface ItechnologyCardProps {
     tech: Itechnology
+    selectedTechnology: Itechnology[]
+    setSelectedTechnology: Dispatch<SetStateAction<Itechnology[]>>
 }
 
-const TechnologyCard = ({ tech }: ItechnologyCardProps) => {
+const TechnologyCard = ({ tech, selectedTechnology, setSelectedTechnology }: ItechnologyCardProps) => {
+
+    const [isSelected, setIsSelected] = useState(false)
+
+    const handleSelectedCard = (tech: Itechnology) => {
+        setIsSelected(true)
+        toast.success(` Added succesfully`, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+        });
+
+        setSelectedTechnology([...selectedTechnology, tech])
+
+    }
 
     return (
         <div className=''>
@@ -60,8 +83,11 @@ const TechnologyCard = ({ tech }: ItechnologyCardProps) => {
                 </div>
 
                 {/* Button */}
-                <button className="btn btn-neutral btn-sm w-full mt-4">
-                    Add to Stack
+                <button
+                    onClick={() => handleSelectedCard(tech)}
+                    className="btn btn-neutral btn-sm w-full mt-4"
+                    disabled={isSelected}>
+                    {isSelected ? "Added to Stack" : "Add to Stack"}
                 </button>
 
             </div>
