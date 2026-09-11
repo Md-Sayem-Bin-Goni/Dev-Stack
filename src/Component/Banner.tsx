@@ -2,8 +2,8 @@ import BannerImg from '../assets/banner-stack.png'
 
 const Banner = () => {
     return (
-        <div className='grid grid-cols-12 container mx-auto   mt-11 mb-11'>
-            <div className='col-span-6'>
+        <div className='grid grid-cols-1 text-center md:grid-cols-2 md:text-left container mx-auto   mt-11 mb-11'>
+            <div className=''>
                 <h2 className='font-bold text-6xl mt-15 '>Build Your Ideal
                     <span className='bg-linear-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent'> Development Stack</span></h2>
                 <p className='text-1xl mt-10'>Explore frontend, backend, database, and tooling options, <br />
@@ -17,7 +17,7 @@ const Banner = () => {
                 </div>
             </div>
 
-            <div className='col-span-6 flex justify-center'>
+            <div className=' flex justify-center'>
                 <img src={BannerImg} alt="" />
             </div>
         </div>

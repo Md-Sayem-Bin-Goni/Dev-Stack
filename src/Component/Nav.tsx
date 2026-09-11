@@ -1,11 +1,13 @@
+import { GiHamburgerMenu } from 'react-icons/gi';
 import Logo from '../assets/logo-text.png'
 
 const Nav = () => {
     return (
         <div className='sticky top-0 z-50  bg-white pt-2'>
             <div className='flex justify-between items-center container mx-auto  pt-2'>
+               <GiHamburgerMenu className='md:hidden'/>
                 <img src={Logo} alt="" />
-                <ul className='flex gap-5'>
+                <ul className=' hidden md:block md:flex gap-5'>
                     <li className='text-[#D91B7E]'>Home</li>
                     <li>Technologies</li>
                     <li>Projects</li>

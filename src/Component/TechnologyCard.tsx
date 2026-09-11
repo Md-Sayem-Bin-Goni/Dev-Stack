@@ -88,8 +88,9 @@ const TechnologyCard = ({ tech, selectedTechnology, setSelectedTechnology }: Ite
                 <button
                     onClick={() => handleSelectedCard(tech)}
                     className={isSelected ? "btn btn-neutral btn-sm w-full mt-4  " : "btn btn-neutral btn-sm w-full mt-4  "}
-                    disabled={isSelected}>
-                    {isSelected ? `Added to stack ` : "Add to Stack"}
+                    disabled={isSelected}
+                    >
+                    {isSelected ? `✓ Added to stack ` : "Add to Stack"}
                 </button>
 
             </div>
