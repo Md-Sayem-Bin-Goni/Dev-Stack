@@ -11,7 +11,7 @@ const Banner = () => {
                     next project.
                 </p>
 
-                <div className='flex gap-5'>
+                <div className='flex gap-5 justify-center md:justify-start'>
                     <button className=" mt-10 btn btn-active btn-secondary bg-linear-to-r from-purple-500 via-pink-500 to-red-500 ">Explore Technologies</button>
                     <button className=" mt-10 btn btn-active  ">Learn More</button>
                 </div>

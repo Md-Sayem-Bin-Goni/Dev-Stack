@@ -12,7 +12,7 @@ interface IAvailableTechnologyProps {
 const AvailableTechnology = ({ technology, selectedTechnology, setSelectedTechnology }: IAvailableTechnologyProps) => {
     return (
         <div>
-            <div className='grid grid-cols-3 gap-4'>
+            <div className='grid grid-cols-1  md:grid-cols-3 gap-4   lg:grid-cols-3 gap-4'>
                 {
                     technology.map((tech: Itechnology) => {
                         return <TechnologyCard tech={tech} key={tech.id} selectedTechnology={selectedTechnology} setSelectedTechnology={setSelectedTechnology}></TechnologyCard>

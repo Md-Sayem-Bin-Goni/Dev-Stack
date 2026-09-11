@@ -14,17 +14,17 @@ const Technology = ({ dataPromise }: ItechnologyProps) => {
     const [selectedTechnology, setSelectedTechnology] = useState<Itechnology[]>([])
 
     return (
-        <div className='container mx-auto grid    lg:grid-cols-12'>
-            <div className='grid grid-cols-1'>
-                <div className='lg:col-span-9'>
+        <div className='container mx-auto grid  grid-cols-12  '>
+     
+                <div className='col-span-9'>
                     <h2 className='text-4xl font-bold'>Explore the <span className='bg-linear-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent'>Technologies</span></h2>
                     <p className='mt-3 mb-5'>Pick one technology per category to build your ideal stack.</p>
 
                     <AvailableTechnology technology={technology} selectedTechnology={selectedTechnology} setSelectedTechnology={setSelectedTechnology}></AvailableTechnology>
                 </div>
-            </div>
+          
 
-            <div className='lg:col-span-3'>
+            <div className='col-span-3'>
                 <div>
                     <SelectedTechnology selectedTechnology={selectedTechnology} setSelectedTechnology={setSelectedTechnology} ></SelectedTechnology>
                 </div>
