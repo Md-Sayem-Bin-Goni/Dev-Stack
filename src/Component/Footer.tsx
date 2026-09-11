@@ -1,7 +1,7 @@
-import React from 'react';
 import footerLogo from '../assets/logo-text.png'
 
-const FooterC = () => {
+
+const Footer = () => {
     return (
         <div className='mt-30'>
             <div className="divider mb-9"></div>
@@ -59,4 +59,4 @@ const FooterC = () => {
     );
 };
 
-export default FooterC;
+export default Footer;

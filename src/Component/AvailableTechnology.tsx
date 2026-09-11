@@ -1,4 +1,4 @@
-import React, { type Dispatch, type SetStateAction } from 'react';
+import { type Dispatch, type SetStateAction } from 'react';
 import type { Itechnology } from '../Type/Type';
 import TechnologyCard from './TechnologyCard';
 
@@ -19,8 +19,6 @@ const AvailableTechnology = ({ technology, selectedTechnology, setSelectedTechno
                     })
                 }
             </div>
-
-
         </div>
     );
 };

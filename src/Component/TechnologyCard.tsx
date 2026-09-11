@@ -1,6 +1,7 @@
-import React, { useState, type Dispatch, type SetStateAction } from 'react';
+import { useState, type Dispatch, type SetStateAction } from 'react';
 import type { Itechnology } from '../Type/Type';
 import { Bounce, toast } from 'react-toastify';
+
 
 interface ItechnologyCardProps {
     tech: Itechnology
@@ -8,14 +9,15 @@ interface ItechnologyCardProps {
     setSelectedTechnology: Dispatch<SetStateAction<Itechnology[]>>
 }
 
+
 const TechnologyCard = ({ tech, selectedTechnology, setSelectedTechnology }: ItechnologyCardProps) => {
 
     const [isSelected, setIsSelected] = useState(false)
 
     const handleSelectedCard = (tech: Itechnology) => {
         setIsSelected(true)
-        toast.success(` Added succesfully`, {
-            position: "top-center",
+        toast.success(`${tech.name}   Added to stack`, {
+            position: "bottom-right",
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: false,
@@ -26,15 +28,15 @@ const TechnologyCard = ({ tech, selectedTechnology, setSelectedTechnology }: Ite
             transition: Bounce,
         });
 
+
+
         setSelectedTechnology([...selectedTechnology, tech])
 
     }
 
     return (
         <div className=''>
-
-
-            <div className="  card bg-base-100 border border-gray-200 shadow-sm rounded-xl p-5">
+            <div className={isSelected ? " card bg-base-100 border border-pink-500  shadow-sm rounded-xl p-5" : " card bg-base-100 border border-gray-200  shadow-sm rounded-xl p-5"}>
 
                 {/* Logo + Badge */}
                 <div className="flex justify-between ">
@@ -57,7 +59,7 @@ const TechnologyCard = ({ tech, selectedTechnology, setSelectedTechnology }: Ite
                 </h2>
 
                 {/* Description */}
-                <p className="text-sm text-gray-500 mt-2 leading-6 min-h-[72px]">
+                <p className="text-sm text-gray-500 mt-2 leading-6 min-h-18">
                     {tech.description}
                 </p>
 
@@ -85,9 +87,9 @@ const TechnologyCard = ({ tech, selectedTechnology, setSelectedTechnology }: Ite
                 {/* Button */}
                 <button
                     onClick={() => handleSelectedCard(tech)}
-                    className="btn btn-neutral btn-sm w-full mt-4"
+                    className={isSelected ? "btn btn-neutral btn-sm w-full mt-4  " : "btn btn-neutral btn-sm w-full mt-4  "}
                     disabled={isSelected}>
-                    {isSelected ? "Added to Stack" : "Add to Stack"}
+                    {isSelected ? `Added to stack ` : "Add to Stack"}
                 </button>
 
             </div>

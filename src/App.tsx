@@ -1,10 +1,10 @@
 import Banner from "./Component/Banner"
-
 import Nav from "./Component/Nav"
-import { Suspense, use, useState } from "react"
+import { Suspense,  useState } from "react"
 import Technology from "./Component/Technology"
 import { ToastContainer } from "react-toastify"
-import FooterC from "./Component/FooterC"
+import Footer from "./Component/Footer"
+
 
 
 const datafetch = async () => {
@@ -22,14 +22,11 @@ function App() {
     <>
       <ToastContainer />
       <Nav></Nav>
-
       <Banner></Banner>
-
-      <Suspense fallback={<h2>Loading...</h2>}>
+      <Suspense fallback={<h2 className="container mx-auto text-2xl">Loading...</h2>}>
         <Technology dataPromise={dataPromise}></Technology>
       </Suspense>
-
-   <FooterC></FooterC>
+      <Footer></Footer>
     </>
   )
 }
