@@ -87,7 +87,7 @@ const TechnologyCard = ({ tech, selectedTechnology, setSelectedTechnology }: Ite
                 {/* Button */}
                 <button
                     onClick={() => handleSelectedCard(tech)}
-                    className={isSelected ? "btn btn-neutral btn-sm w-full mt-4  " : "btn btn-neutral btn-sm w-full mt-4  "}
+                    className={isSelected ? "btn btn-neutral btn-sm w-full mt-4  " : "btn  btn-sm w-full mt-4 hover:bg-linear-to-r from-purple-500 via-pink-500 to-red-500" }
                     disabled={isSelected}
                     >
                     {isSelected ? `✓ Added to stack ` : "Add to Stack"}

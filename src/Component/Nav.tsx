@@ -5,14 +5,14 @@ const Nav = () => {
     return (
         <div className='sticky top-0 z-50  bg-white pt-2'>
             <div className='flex justify-between items-center container mx-auto  pt-2'>
-               <GiHamburgerMenu className='md:hidden'/>
+                <GiHamburgerMenu className='md:hidden' />
                 <img src={Logo} alt="" />
                 <ul className=' hidden md:block md:flex gap-5'>
-                    <li className='text-[#D91B7E]'>Home</li>
-                    <li>Technologies</li>
-                    <li>Projects</li>
-                    <li>About </li>
-                    <li>Contact </li>
+                    <li><a href="" className='hover:text-[#D91B7E]'>Home</a></li>
+                    <li><a href="" className='hover:text-[#D91B7E]'>Technologies</a></li>
+                    <li><a href="" className='hover:text-[#D91B7E]'>Projects</a></li>
+                    <li><a href="" className='hover:text-[#D91B7E]'>About</a> </li>
+                    <li><a href="" className='hover:text-[#D91B7E]'>Contact</a> </li>
                 </ul>
 
                 <div className='flex gap-3'>
