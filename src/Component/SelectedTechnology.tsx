@@ -1,6 +1,7 @@
 import { type Dispatch, type SetStateAction } from 'react';
 import SelectedCard from './SelectedCard';
 import type { Itechnology } from '../Type/Type';
+import { Bounce, toast } from 'react-toastify';
 
 
 interface ISelectedTechnologyProps {
@@ -13,6 +14,17 @@ const SelectedTechnology = ({ selectedTechnology, setSelectedTechnology }: ISele
 
     const handleRemoveAll = () => {
         setSelectedTechnology([])
+        toast.info(`Stack is empty now`, {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+        });
     }
 
     return (

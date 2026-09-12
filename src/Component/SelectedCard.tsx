@@ -1,6 +1,7 @@
-import  { type Dispatch, type SetStateAction } from 'react';
+import { type Dispatch, type SetStateAction } from 'react';
 import type { Itechnology } from '../Type/Type';
 import { RxCross2 } from 'react-icons/rx';
+import { Bounce, toast } from 'react-toastify';
 
 interface setSelectedTechnology {
     technology: Itechnology
@@ -16,7 +17,19 @@ const SelectedCard = ({ technology, selectedTechnology, setSelectedTechnology }:
         const restTechnology = selectedTechnology.filter(selectedTechnology => selectedTechnology.name != technology.name)
         setSelectedTechnology(restTechnology);
 
-        
+        toast.info(`${technology.name} Removed from stack`, {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+        });
+
+
     }
 
     return (
